@@ -1,12 +1,15 @@
 import mongoose from "mongoose";
+import { balanceSchema } from "./balance.js";
 
 const userSchema = new mongoose.Schema({
   id: { type: mongoose.Schema.Types.ObjectId },
   userName: { type: String, required: true },
-  balance: {type: Number},
-
-})
+  passWord: { type: String },
+  passWordHash: { type: String },
+  passWordSalt: { type: String },
+  balance: { type: balanceSchema },
+}, { versionKey: false })
 
 const user = mongoose.model("users", userSchema)
 
-export {userSchema, user};
+export { userSchema, user };
