@@ -6,7 +6,6 @@ const userSchema = new mongoose.Schema({
   userName: { type: String, required: true },
   passWord: { type: String },
   passWordHash: { type: String },
-  passWordSalt: { type: String },
   balance: { type: balanceSchema },
 }, { versionKey: false })
 
