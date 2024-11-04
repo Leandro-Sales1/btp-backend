@@ -2,7 +2,7 @@ import { user } from '../models/user.js';
 import checkJWT from '../utils/checkJWT.js';
 import createJWT from '../utils/createJWT.js';
 import passWordChecker from '../utils/passWordChecker.js';
-import passWordHash from '../utils/passwordHashAndSalt.js';
+import passWordHash from '../utils/passWordHash.js';
 
 class UserController {
   static async createUser(req, res) {
