@@ -7,7 +7,7 @@ export default function checkJWT(headers) {
   const token = JSON.parse(headers.authorization).split(' ')[1];
   try {
     const payloadToken = jwt.verify(token, process.env.JWT_SECRET);
-    return payloadToken;
+    return payloadToken.data;
 
   } catch (error) {
     throw new Error(error);

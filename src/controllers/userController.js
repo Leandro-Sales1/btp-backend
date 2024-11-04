@@ -5,16 +5,6 @@ import passWordChecker from '../utils/passWordChecker.js';
 import passWordHash from '../utils/passwordHashAndSalt.js';
 
 class UserController {
-  static async getAllUsers(req, res) {
-    try {
-      const usersList = await user.find({})
-      res.status(200).json(usersList)
-
-    } catch (erro) {
-      res.status(500).json({ message: `${erro.message} - falha na requisição` });
-    }
-  }
-
   static async createUser(req, res) {
     try {
       const userDB = await user.findOne({ "userName": req.body.userName })
@@ -84,6 +74,23 @@ class UserController {
         }
       } else {
         res.status(400).json({ message: "Houve algum erro com a atualização do usuário" });
+      }
+    } catch (erro) {
+      res.status(500).json({ message: `${erro.message} - falha na requisição` });
+    }
+  }
+
+  static async deleteUser(req, res) {
+    try {
+      const payloadtokenJWT = checkJWT(req.headers);
+
+      if (payloadtokenJWT) {
+        const userInDB = await user.findOneAndDelete({ userName: payloadtokenJWT })
+
+        res.status(200).json({ message: "usuário deletado com sucesso", userInDB });
+
+      } else {
+        res.status(400).json({ message: "Houve algum erro ao encontrar o usuário a deletar" });
       }
     } catch (erro) {
       res.status(500).json({ message: `${erro.message} - falha na requisição` });
