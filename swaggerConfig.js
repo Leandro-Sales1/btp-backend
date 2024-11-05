@@ -13,7 +13,7 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: "https://btp-backend-kappa.vercel.app", 
+        url: "https://btp-backend-kappa.vercel.app/", 
       },
     ],
     components: {
