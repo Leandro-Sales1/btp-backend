@@ -4,7 +4,7 @@ const swaggerOptions = {
   swaggerDefinition: {
     openapi: "3.0.0",
     info: {
-      title: "API Rest to BTP-App",
+      title: "REST API to BTP-App",
       version: "1.0.0",
       description: "API Docs",
       contact: {
