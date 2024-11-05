@@ -1,5 +1,9 @@
 # API REST para o projeto do BTP - Banco Tio Patinhas!
 
+## Deploy:
+
+https://btp-backend-kappa.vercel.app/api-docs/
+
 ## Tecnologias Utilizadas:
 
 - Node
@@ -9,6 +13,7 @@
 - Mongoose
 - JWT
 - dotenv
+- Swagger
 
 ### Funcionalidades:
 
