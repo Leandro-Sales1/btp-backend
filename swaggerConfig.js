@@ -19,7 +19,7 @@ const swaggerOptions = {
     components: {
       securitySchemes: {
         bearerAuth: {
-          type: "token JWT",
+          type: "apiKey",
           name: "Authorization",
           in: "header",
           description: "Bearer <JWT>",
