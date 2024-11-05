@@ -2,7 +2,7 @@ import swaggerJsDoc from "swagger-jsdoc";
 
 const swaggerOptions = {
   swaggerDefinition: {
-    openapi: "3.0.0", 
+    openapi: "3.0.0",
     info: {
       title: "API Rest to BTP-App",
       version: "1.0.0",
@@ -13,15 +13,16 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: "https://btp-backend-kappa.vercel.app/", 
+        url: "https://btp-backend-kappa.vercel.app/",
       },
     ],
     components: {
       securitySchemes: {
         bearerAuth: {
-          type: "http",
-          scheme: "bearer",
-          bearerFormat: "JWT", 
+          type: "apiKey",
+          name: "Authorization",
+          in: "header",
+          description: "Bearer <JWT>",
         },
       },
     },
