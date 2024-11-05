@@ -22,3 +22,4 @@ https://btp-backend-kappa.vercel.app/api-docs/
 3. Autenticação - Via JWT, retornando os dados do usuário.
 4. Remoção do usuário da DB.
 
+![image](https://github.com/Leandro-Sales1/btp-backend/blob/main/btp-API.png)
